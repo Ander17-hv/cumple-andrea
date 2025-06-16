@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Eres Andrea?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe4ec, #e0c3fc);
+      padding-top: 100px;
+      color: #333;
+    }
+    .box {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 40px;
+      display: inline-block;
+      animation: fadeIn 1s ease;
+    }
+    button {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ff5ec1;
+      color: white;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #c039a0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="content">
+    <h2>¿Eres Andrea?</h2>
+    <button onclick="esAndrea()">Sí</button>
+    <button onclick="noEsAndrea()">No</button>
+  </div>
+
+  <script>
+    function esAndrea() {
+      document.getElementById("content").innerHTML = `
+        <h2>🎉 ¡Feliz cumpleaños, Andrea! 🎂</h2>
+        <p>Espero que tengas un día maravilloso lleno de alegría, amor y pastel 🍰✨</p>
+        <p>¡Te lo mereces todo y más! 💖</p>
+      `;
+      const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+      audio.play();
+    }
+
+    function noEsAndrea() {
+      document.getElementById("content").innerHTML = `
+        <h2>🚫 ¡Impostor!</h2>
+        <p>¡Solo Andrea puede ver este mensaje especial! 😤</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
