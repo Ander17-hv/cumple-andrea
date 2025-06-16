@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Eres una burra?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffe4ec, #e0c3fc);
+      padding-top: 50px;
+      color: #333;
+    }
+    .box {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 40px;
+      display: inline-block;
+      animation: fadeIn 1s ease;
+      max-width: 90%;
+    }
+    button {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ff5ec1;
+      color: white;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #c039a0;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="content">
+    <h2>¿Eres una burra?</h2>
+    <button onclick="respuestaSi()">Sí</button>
+    <button onclick="respuestaNo()">No</button>
+  </div>
+
+  <script>
+    function respuestaSi() {
+      document.getElementById("content").innerHTML = `
+        <h2>Se sabe que eres una burra... bobita 😜</h2>
+        <img src="https://i.imgur.com/B2R8S9A.png" alt="Burro">
+        <br><br>
+        <button onclick="mostrarFinal()">Clickea</button>
+      `;
+    }
+
+    function respuestaNo() {
+      document.getElementById("content").innerHTML = `
+        <h2>Es el día de tu cumpleaños, no el día de los inocentes... ¡tonta! 😂</h2>
+        <img src="https://i.imgur.com/RvDPRlN.png" alt="Burro enojado">
+        <br><br>
+        <button onclick="mostrarFinal()">Clickea</button>
+      `;
+    }
+
+    function mostrarFinal() {
+      document.getElementById("content").innerHTML = `
+        <h2>🎉 Feliz cumpleaños mi queridísima Andrea 🎂</h2>
+        <img src="IMAGEN_AQUI" alt="Foto personalizada">
+        <p>Aquí puedes escribir más cosas bonitas, chistosas o sentimentales para Andrea 🥰</p>
+        <br>
+        <button onclick="volverInicio()">Volver al inicio</button>
+      `;
+    }
+
+    function volverInicio() {
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
